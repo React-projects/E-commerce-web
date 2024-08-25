@@ -23,6 +23,7 @@ function App() {
           <Route path="login" element={<LogInSignUp />} />
         </Routes>
       </BrowserRouter>
+
     </div>
   );
 }
