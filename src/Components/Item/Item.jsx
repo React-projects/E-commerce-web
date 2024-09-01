@@ -5,7 +5,7 @@ function Item(props) {
 	return (
 		<div className='item'>
 			<Link style={{textDecoration:'none'}} to={`/product/${props.id}`}>
-			<img src={props.images} alt="image-product" />
+			<img onClick={window.scrollTo(0,0)} src={props.images} alt="image-product" />
 			<p>{props.name}</p>
 			<div className="item-prices">
 				<div className="item-price-new">
