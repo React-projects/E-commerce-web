@@ -34,7 +34,7 @@
   -o-border-radius: 80px;
   border: 1 solid #e3e3e3;
 }
-input[type="email"] {
+.new-Letter input[type="email"] {
   width: 500px;
   margin-left: 30px;
   border: none;
