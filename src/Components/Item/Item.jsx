@@ -1,8 +1,10 @@
 import React from 'react'
 import './Item.css'
+import { Link } from 'react-router-dom'
 function Item(props) {
 	return (
 		<div className='item'>
+			<Link style={{textDecoration:'none'}} to={`/product/${props.id}`}>
 			<img src={props.images} alt="image-product" />
 			<p>{props.name}</p>
 			<div className="item-prices">
@@ -13,6 +15,7 @@ function Item(props) {
 				${props.old_price}
 				</div>
 			</div>
+			</Link>
 			
 		</div>
 	)
