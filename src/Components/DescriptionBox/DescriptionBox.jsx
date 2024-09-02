@@ -8,18 +8,24 @@ function DescriptionBox() {
         <div className="descriptionbox-nav-box fade">Reviews(122)</div>
       </div>
       <div className="descriptionbox-description">
-        <p>
-          An e-commerce website is an ontine platorm that rachitate buying and
-          selling of products or services over the internet serves as a virtual
-          marketplace where businesses and individ showcase their products,
-          interact with customers, and conduc transactions without the need for
-          a physical presence. E-com websites have gained immense popularity due
-          to their conveni accessibility. and the global reach they offer.k
+      <p>
+          Ecommerce or "electronic commerce" is the trading of goods and
+          services online. The internet allows individuals and businesses to buy
+          and sell an increasing amount of physical goods, digital goods, and
+          services electronically.
         </p>
         <p>
-          E-commerce websites typically display products or se some ed
-          descriptions, images, prices, and any avail e*-g., sizes, colors).
-          Each product usually has its with relevant information 7:5
+          Ecommerce offers people the convenience of shopping from their
+          computers, phones, tablets, and other devices. They visit websites,
+          social media pages, and other virtual channels to find what they’re
+          looking for. Entrepreneurs, startups, small and medium-sized
+          businesses, and large retailers can all use ecommerce to reach
+          customers across the globe. Selling online might be a business’s sole
+          revenue source, or it might be part of a multi-channel selling
+          strategy. For example, a large brick-and-mortar retailer might adopt
+          an online sales channel, or an entrepreneur might sell a small number
+          of specialty handcrafted goods through a social media site like
+          Facebook, Instagram, or Pinterest.
         </p>
       </div>
     </div>

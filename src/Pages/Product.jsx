@@ -3,7 +3,7 @@ import "./Css/Product.css";
 import { shopContext } from "../Context/ShopContext";
 import { useParams } from "react-router-dom";
 import BreadCrumb from "../Components/BreadCrums/BreadCrumb";
-import ProductDetails from "../Components/ProductData/ProductDetails";
+import ProductDetails from "../Components/ProductDatails/ProductDetails";
 import DescriptionBox from "../Components/DescriptionBox/DescriptionBox";
 import RelatedProducts from "../Components/RelatedProducts/RelatedProducts";
 
