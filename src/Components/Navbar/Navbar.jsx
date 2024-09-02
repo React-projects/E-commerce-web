@@ -1,23 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
 import "./Navbar.css";
 import logo from "../Assets/logo.png";
 import CartIcon from "../Assets/cart_icon.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { shopContext } from "../../Context/ShopContext";
 function Navbar() {
   const [menu, setMenu] = useState("shop");
+  const { numberItemsInCart } = useContext(shopContext);
+
   return (
     <div className="navbar">
-      <div className="nav-logo">
-        <img src={logo} alt="Logo-image" />
-        <p> SHOPPER</p>
-      </div>
+      <NavLink style={{ textDecoration: "none" }} to="/">
+        <div className="nav-logo">
+          <img src={logo} alt="Logo-image" />
+          <p> SHOPPER</p>
+        </div>
+      </NavLink>
       <ul className="nav-menu">
         <li
           onClick={() => {
             setMenu("shop");
           }}
         >
-          <Link style={{textDecoration:'none'}} to="/"> Shop</Link>
+          <NavLink style={{ textDecoration: "none" }} to="/">
+            {" "}
+            Shop
+          </NavLink>
           {menu === "shop" ? <hr /> : <></>}
         </li>
         <li
@@ -25,7 +34,10 @@ function Navbar() {
             setMenu("mens");
           }}
         >
-          <Link style={{textDecoration:'none'}} to="/mens"> Mens</Link>
+          <NavLink style={{ textDecoration: "none" }} to="/mens">
+            {" "}
+            Mens
+          </NavLink>
 
           {menu === "mens" ? <hr /> : <></>}
         </li>
@@ -34,7 +46,10 @@ function Navbar() {
             setMenu("womans");
           }}
         >
-          <Link to="womans" style={{textDecoration:'none'}}> Womans</Link>
+          <NavLink to="womans" style={{ textDecoration: "none" }}>
+            {" "}
+            Womans
+          </NavLink>
           {menu === "womans" ? <hr /> : <></>}
         </li>
         <li
@@ -42,21 +57,22 @@ function Navbar() {
             setMenu("kids");
           }}
         >
-          <Link to="/kids" style={{textDecoration:'none'}}> kids</Link>
+          <NavLink to="/kids" style={{ textDecoration: "none" }}>
+            {" "}
+            kids
+          </NavLink>
           {menu === "kids" ? <hr /> : <></>}
         </li>
       </ul>
       <div className="nav-login-cart">
-        <Link to="/login">
-    
+        <NavLink to="/login">
           <button> login</button>
-        </Link>
-        <Link to="/cart">
-    
-        <img src={CartIcon} alt="cart-icon" />
-        </Link>
+        </NavLink>
+        <NavLink to="/cart">
+          <img src={CartIcon} alt="cart-icon" />
+        </NavLink>
 
-        <div className="nav-cart-count">0</div>
+        < div className="nav-cart-count">{numberItemsInCart()}</div>
       </div>
     </div>
   );
