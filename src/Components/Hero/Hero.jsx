@@ -17,7 +17,7 @@ function Hero() {
           <p>collections</p>
           <p>for everyone</p>
           <div className="hero-latest-btn">
-            <h2>latest collection</h2>
+            <h2>Latest Collection</h2>
             <img src={ArrowIcon} alt="arrow-image" />
           </div>
         </>
