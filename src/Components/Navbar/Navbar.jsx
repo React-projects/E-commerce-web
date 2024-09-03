@@ -1,14 +1,21 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext,useRef } from "react";
 
 import "./Navbar.css";
 import logo from "../Assets/logo.png";
 import CartIcon from "../Assets/cart_icon.png";
+import NavDropdowntIcon from "../Assets/nav_dropdown.png";
 import { NavLink } from "react-router-dom";
 import { shopContext } from "../../Context/ShopContext";
 function Navbar() {
   const [menu, setMenu] = useState("shop");
   const { numberItemsInCart } = useContext(shopContext);
+  const navMenuToggle=(e)=>{
+    menuref.current.classList.toggle('nav-visible')
+    e.target.classList.toggle('open')
 
+  }
+
+  const menuref =useRef()
   return (
     <div className="navbar">
       <NavLink style={{ textDecoration: "none" }} to="/">
@@ -17,14 +24,14 @@ function Navbar() {
           <p> SHOPPER</p>
         </div>
       </NavLink>
-      <ul className="nav-menu">
+      <img className="nav-dropdown" onClick={navMenuToggle} src={NavDropdowntIcon} alt="dropdown-icon" />
+      <ul ref={menuref} className="nav-menu">
         <li
           onClick={() => {
             setMenu("shop");
           }}
         >
           <NavLink style={{ textDecoration: "none" }} to="/">
-            {" "}
             Shop
           </NavLink>
           {menu === "shop" ? <hr /> : <></>}
@@ -35,7 +42,6 @@ function Navbar() {
           }}
         >
           <NavLink style={{ textDecoration: "none" }} to="/mens">
-            {" "}
             Mens
           </NavLink>
 
@@ -47,7 +53,6 @@ function Navbar() {
           }}
         >
           <NavLink to="womans" style={{ textDecoration: "none" }}>
-            {" "}
             Womans
           </NavLink>
           {menu === "womans" ? <hr /> : <></>}
@@ -58,7 +63,6 @@ function Navbar() {
           }}
         >
           <NavLink to="/kids" style={{ textDecoration: "none" }}>
-            {" "}
             kids
           </NavLink>
           {menu === "kids" ? <hr /> : <></>}
@@ -72,7 +76,7 @@ function Navbar() {
           <img src={CartIcon} alt="cart-icon" />
         </NavLink>
 
-        < div className="nav-cart-count">{numberItemsInCart()}</div>
+        <div className="nav-cart-count">{numberItemsInCart()}</div>
       </div>
     </div>
   );
